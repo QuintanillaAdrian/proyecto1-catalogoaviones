@@ -24,7 +24,6 @@ console.log(fabricantes)
 </template>
 
 <style>
-/* Contenedor general */
 .container {
     max-width: 1000px;
     margin: 60px auto;
@@ -33,7 +32,6 @@ console.log(fabricantes)
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Título principal */
 .container h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -41,14 +39,13 @@ console.log(fabricantes)
     margin-bottom: 30px;
 }
 
-/* Grid de tarjetas */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
-/* Tarjeta individual */
+
 .card {
     background: #ffffff;
     border-radius: 16px;
@@ -60,13 +57,11 @@ console.log(fabricantes)
     align-items: center;
 }
 
-/* Hover de tarjeta */
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
-/* Logo del fabricante */
 .card-logo {
     width: 80px;
     height: 80px;
@@ -74,7 +69,6 @@ console.log(fabricantes)
     margin-bottom: 15px;
 }
 
-/* Nombre del fabricante */
 .card-title {
     font-size: 1.3rem;
     font-weight: 600;
@@ -83,7 +77,6 @@ console.log(fabricantes)
     text-align: center;
 }
 
-/* Link "Ver más" */
 .card-link {
     text-decoration: none;
     color: #2563eb;

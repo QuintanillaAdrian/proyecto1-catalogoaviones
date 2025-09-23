@@ -1,7 +1,6 @@
 <script setup>
 const route = useRoute()
 
-// Obtener datos del fabricante por id
 const { data: posts } = await useAsyncData('allPosts', () =>
   queryCollection('content').all()
 )
@@ -9,7 +8,6 @@ const fabricante = posts.value
   .filter(p => p.path.startsWith('/fabricantes'))
   .find(p => p.path === `/fabricantes/${route.params.id}`)
 
-// Obtener aviones de este fabricante
 const aviones = posts.value
   .filter(p => p.path.startsWith('/aviones') && p.meta.manufacturerId === route.params.id)
 </script>

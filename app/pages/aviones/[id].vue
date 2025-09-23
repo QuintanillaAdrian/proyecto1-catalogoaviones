@@ -1,22 +1,18 @@
 <script setup>
 const route = useRoute()
 
-// Obtener todos los posts
 const { data: posts } = await useAsyncData('allPosts', () =>
   queryCollection('content').all()
 )
 
-// Avión seleccionado
 const avion = posts.value
   .filter(p => p.path.startsWith('/aviones'))
   .find(p => p.path === `/aviones/${route.params.id}`)
 
-// Fabricante relacionado (compara con slug final del path)
 const fabricante = posts.value
   .filter(f => f.path.startsWith('/fabricantes'))
   .find(f => f.path.split('/').pop() === avion.meta.manufacturerId)
 
-// Aerolíneas usuarias (compara con slugs finales de sus paths)
 const aerolineas = posts.value
   .filter(a => a.path.startsWith('/aerolineas'))
   .filter(a => avion.meta.airlineIds?.includes(a.path.split('/').pop()))

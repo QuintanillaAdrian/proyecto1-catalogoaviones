@@ -3,14 +3,11 @@ const { data: posts } = await useAsyncData('allPosts', () =>
   queryCollection('content').all()
 )
 
-// Filtrar solo aviones
 const aviones = posts.value.filter(p => p.path.startsWith('/aviones'))
 
-// Fabricantes y aerolíneas para referencia
 const fabricantes = posts.value.filter(p => p.path.startsWith('/fabricantes'))
 const aerolineas = posts.value.filter(p => p.path.startsWith('/aerolineas'))
 
-// Funciones de ayuda para obtener relaciones
 const getFabricante = (manufacturerId) =>
   fabricantes.find(f => f.path.split('/').pop() === manufacturerId)
 
@@ -54,7 +51,6 @@ const getAerolineas = (airlineIds) =>
 </template>
 
 <style>
-/* Mantener el mismo CSS que tenías */
 body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: #f4f6f8;

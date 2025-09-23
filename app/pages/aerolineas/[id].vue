@@ -1,7 +1,6 @@
 <script setup>
 const route = useRoute()
 
-// Obtener datos de la aerolínea por id
 const { data: posts } = await useAsyncData('allPosts', () =>
   queryCollection('content').all()
 )
@@ -10,7 +9,6 @@ const aerolinea = posts.value
   .filter(p => p.path.startsWith('/aerolineas'))
   .find(p => p.path === `/aerolineas/${route.params.id}`)
 
-// Obtener aviones que utilizan esta aerolínea
 const aviones = posts.value
   .filter(p => p.path.startsWith('/aviones') && p.meta.airlineIds?.includes(route.params.id))
 </script>
@@ -46,7 +44,6 @@ const aviones = posts.value
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Cabecera aerolínea */
 .airline-header {
   display: flex;
   align-items: center;
@@ -99,7 +96,6 @@ const aviones = posts.value
   box-shadow: 0 6px 12px rgba(37,99,235,0.3);
 }
 
-/* Sección de aviones */
 .aviones-section {
   background: #fff;
   padding: 20px;
