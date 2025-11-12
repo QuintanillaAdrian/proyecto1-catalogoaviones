@@ -1,4 +1,5 @@
 <script setup>
+import Utteranc from '../../../components/global/utteranc.vue'
 const route = useRoute()
 
 const { data: posts } = await useAsyncData('allPosts', () =>
@@ -21,7 +22,7 @@ const aerolineas = posts.value
 <template>
   <div class="container">
     <div class="avion-header">
-      <img :src="avion.meta.image" alt="" class="avion-image" />
+      <img :src="avion.meta.image" alt="" class="avion-image">
       <div class="avion-info-container">
         <h1 class="avion-name">{{ avion.model }}</h1>
 
@@ -45,6 +46,11 @@ const aerolineas = posts.value
         <p class="avion-desc">{{ avion.description }}</p>
       </div>
     </div>
+    
+    <section id="comments" style="margin-top:32px">
+      <h3>Comentarios</h3>
+      <Utteranc />
+    </section>
   </div>
 </template>
 
