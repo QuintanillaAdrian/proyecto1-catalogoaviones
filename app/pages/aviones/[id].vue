@@ -27,7 +27,6 @@ const aerolineas = posts.value
   .filter(a => a.path.startsWith('/aerolineas'))
   .filter(a => avion.meta.airlineIds?.includes(a.path.split('/').pop()))
 
-console.log(avion)
 </script>
 
 <template>
