@@ -8,4 +8,6 @@ capacity: 90
 range_km: 2800
 image: "https://wallpapercave.com/wp/wp3966869.jpg"
 description: "El CRJ900 es un jet regional diseñado para vuelos cortos y medianos."
+price: 35000000
+currency: "USD"
 ---

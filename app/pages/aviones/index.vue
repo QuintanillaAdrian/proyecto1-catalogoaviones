@@ -26,14 +26,14 @@ const getAerolineas = (airlineIds) =>
         <h2 class="card-title">{{ avion.meta.model }}</h2>
 
         <p class="card-info">
-          Fabricante: 
+          Fabricante:
           <NuxtLink :to="getFabricante(avion.meta.manufacturerId)?.path" class="link">
             {{ getFabricante(avion.meta.manufacturerId)?.meta.name }}
           </NuxtLink>
         </p>
 
         <p class="card-info">
-          Aerolíneas usuarias: 
+          Aerolíneas usuarias:
           <span v-for="(airline, idx) in getAerolineas(avion.meta.airlineIds)" :key="airline.id">
             <NuxtLink :to="airline.path" class="link">{{ airline.meta.name }}</NuxtLink>
             <span v-if="idx < avion.meta.airlineIds.length - 1">, </span>
@@ -41,7 +41,8 @@ const getAerolineas = (airlineIds) =>
         </p>
 
         <p class="card-specs">
-          Primer vuelo: {{ avion.meta.first_flight }} • Capacidad: {{ avion.meta.capacity }} pasajeros • Alcance: {{ avion.meta.range_km }} km
+          Primer vuelo: {{ avion.meta.first_flight }} • Capacidad: {{ avion.meta.capacity }} pasajeros • Alcance: {{
+            avion.meta.range_km }} km
         </p>
 
         <NuxtLink :to="avion.path" class="card-link">Ver más</NuxtLink>
@@ -83,7 +84,7 @@ body {
   background: #ffffff;
   border-radius: 16px;
   padding: 25px 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -92,7 +93,7 @@ body {
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
 .card-image {
@@ -146,6 +147,6 @@ body {
 .card-link:hover {
   background: #2563eb;
   color: #fff;
-  box-shadow: 0 6px 12px rgba(37,99,235,0.3);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
 }
 </style>

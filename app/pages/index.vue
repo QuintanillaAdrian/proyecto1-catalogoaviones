@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+
     <h1>Catálogo de Aviones</h1>
     <p>Explora los modelos de aviones, sus fabricantes y aerolíneas usuarias.</p>
 
@@ -8,8 +9,11 @@
       <NuxtLink to="/fabricantes">Fabricantes</NuxtLink>
       <NuxtLink to="/aerolineas">Aerolíneas</NuxtLink>
     </nav>
+
   </div>
+
 </template>
+
 
 <style>
 body {
@@ -26,7 +30,7 @@ body {
   padding: 40px;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   text-align: center;
   animation: fadeIn 0.8s ease;
 }
@@ -64,12 +68,19 @@ body {
 .menu a:hover {
   background: #2563eb;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   border-color: #1d4ed8;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
